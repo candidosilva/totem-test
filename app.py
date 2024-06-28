@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_smorest import Api
+from flask_cors import CORS
 
 from src.controllers.v1.store_controller import blp as StoreBlueprint
 from src.controllers.v1.register_controller import blp as RegisterBlueprint
@@ -20,4 +21,4 @@ api.register_blueprint(StoreBlueprint)
 api.register_blueprint(RegisterBlueprint)
 
 if __name__ == "__main__":
-    app.run(port=80, debug=True)
+    app.run(host='0.0.0.0')
